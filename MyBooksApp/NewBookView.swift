@@ -5,6 +5,7 @@
 //  Created by Umair Salam on 6/21/24.
 //
 
+
 import SwiftUI
 
 struct NewBookView: View {
@@ -17,7 +18,7 @@ struct NewBookView: View {
             Form {
                 TextField("Book Title", text: $title)
                 TextField("Author", text: $author)
-                Button("Create"){
+                Button("Create") {
                     let newBook = Book(title: title, author: author)
                     context.insert(newBook)
                     dismiss()
@@ -29,7 +30,7 @@ struct NewBookView: View {
                 .navigationTitle("New Book")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .topBarLeading){
+                    ToolbarItem(placement: .topBarLeading) {
                         Button("Cancel") {
                             dismiss()
                         }

@@ -5,9 +5,8 @@
 //  Created by Umair Salam on 6/21/24.
 //
 
-import Foundation
+import SwiftUI
 import SwiftData
-
 
 @Model
 class Book {
@@ -40,14 +39,24 @@ class Book {
         self.status = status
     }
     
+    var icon: Image {
+        switch status {
+        case .onShelf:
+            Image(systemName: "checkmark.diamond.fill")
+        case .inProgress:
+            Image(systemName: "book.fill")
+        case .completed:
+            Image(systemName: "books.vertical.fill")
+        }
+    }
 }
 
+
 enum Status: Int, Codable, Identifiable, CaseIterable {
-case onShelf, inProgress, completed
+    case onShelf, inProgress, completed
     var id: Self {
         self
     }
-    
     var descr: String {
         switch self {
         case .onShelf:
