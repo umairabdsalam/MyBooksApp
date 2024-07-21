@@ -1,0 +1,1 @@
+# An app to showcase reading activities, ratings and recommendations.
